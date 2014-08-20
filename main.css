@@ -1,0 +1,33 @@
+body {
+	background-color: whitesmoke;
+	line-height: 2em;
+	font-family: "HelveticaNeue-Light", monospace;
+}
+
+p {
+color: darkslategray;
+
+}
+p:hover {
+	color: slategray;
+}
+
+#tweetblock {
+	float:left;	
+	margin-top: 100px;
+}
+
+#reload {
+	background-color: darkslategray;
+	width: 130px;
+	height: 30px;
+	border-radius: 3px;
+	margin-top: 150px;
+	float:left;
+	margin-right: 40px;
+	color: whitesmoke;
+	text-align: center;
+}
+#reload:hover {
+	background-color: slategray;
+}
