@@ -16,33 +16,33 @@
     </div>
 
     <div id="tweetblock"> 
-      
+
     </div>
 
     <script>
-    $(document).ready(function(){
+    
+      $(document).ready(function(){
         var $body = $('#tweetblock');
         //$body.html('');
-
         var index = streams.home.length - 1;
 
-        //setInterval(function(tweet) {
-
-          while(index >= 0){
-
+      var tweetBuild = function () {
+        while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<h4> <a href=# id="users"> @' + tweet.user + '</a>: ' + tweet.message + ' || <span>' + tweet.created_at +'</span></h4>');
-          //var $tweetStamp = $('<p> || ' + tweet.created_at +'</p>');
           //$tweet.text('@' + tweet.user + ': ' + tweet.message);
-          //$tweetStamp.text(' || ' + tweet.created_at);
-          //$tweetStamp.appendTo($tweet);
           $tweet.appendTo($body);
           index -= 1;
         }
 
+      }
+                tweetBuild();
 
-        //}, 2000);
-        
+       setInterval(function () {
+          //$body.empty();
+          window.location.reload();
+       }, 3000);
+
       });
 
     </script>
