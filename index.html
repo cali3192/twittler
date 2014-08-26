@@ -3,33 +3,46 @@
   <head>
     <link rel="stylesheet" href="main.css">
     <script src="jquery.js"></script>
+    <script src="sugar.min.js"></script>
     <script src="data_generator.js"></script>
   </head>
   <body>
-    <div id="reload">
-      new tweets
+    <div id="header">
+      <h1>twittler</h1>
     </div>
+    <div id="navbar">
+        <div id="reload">new tweets</div>
+        <form><input type="text"> <div id="send">tweet here</div></form>
+    </div>
+
     <div id="tweetblock"> 
       
     </div>
 
     <script>
-
-      $(document).ready(function(){
+    $(document).ready(function(){
         var $body = $('#tweetblock');
         //$body.html('');
 
         var index = streams.home.length - 1;
-        while(index >= 0){
+
+        //setInterval(function(tweet) {
+
+          while(index >= 0){
+
           var tweet = streams.home[index];
-          var $tweet = $('<p></p>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' || ' + tweet.created_at);
+          var $tweet = $('<h4> <a href=# id="users"> @' + tweet.user + '</a>: ' + tweet.message + ' || <span>' + tweet.created_at +'</span></h4>');
+          //var $tweetStamp = $('<p> || ' + tweet.created_at +'</p>');
+          //$tweet.text('@' + tweet.user + ': ' + tweet.message);
+          //$tweetStamp.text(' || ' + tweet.created_at);
+          //$tweetStamp.appendTo($tweet);
           $tweet.appendTo($body);
           index -= 1;
         }
 
-        $('#reload').click(function() { location.reload(); });
 
+        //}, 2000);
+        
       });
 
     </script>
