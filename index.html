@@ -11,8 +11,7 @@
       <h1>twittler</h1>
     </div>
     <div id="navbar">
-        <div id="reload">new tweets</div>
-        <form><input type="text"> <div id="send">tweet here</div></form>
+        <div id="reload">new tweets?</div>
     </div>
 
     <div id="tweetblock"> 
@@ -21,29 +20,31 @@
 
     <script>
     
-      $(document).ready(function(){
-        var $body = $('#tweetblock');
-        //$body.html('');
-        var index = streams.home.length - 1;
-
-      var tweetBuild = function () {
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<h4> <a href=# id="users"> @' + tweet.user + '</a>: ' + tweet.message + ' || <span>' + tweet.created_at +'</span></h4>');
-          //$tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-
+    var body = $('#tweetblock');
+    var showTweet = function (blip) {
+      body.html('');
+      for (var i = blip.length - 1; i >= 0; i--) {
+        var bloop = $('<p><a href=# id=users> @' + blip[i].user + "</a>: " + blip[i].message 
+          + "<br><span> || " + blip[i].created_at.relative() + '</span></p><br>');
+        $('#tweetblock').append(bloop);   
       }
-                tweetBuild();
+    }
 
-       setInterval(function () {
-          //$body.empty();
-          window.location.reload();
-       }, 3000);
+    setInterval (function() {  
+      showTweet(streams.home);  
+    }, 5000);
 
+    $(document).ready(function() {
+
+      showTweet(streams.home);
+
+      $('#reload').on('click', function () {
+        showTweet(streams.home);
       });
+
+    });
+    
+
 
     </script>
    

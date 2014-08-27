@@ -3,10 +3,11 @@ body {
 	line-height: 1em;
 	font-family: "HelveticaNeue-Light", monospace;
 	color: darkslategray;
+	margin: 0 0 0 50px;
 
 }
 h1 {
-	font-size: 4em;
+	font-size: 8em;
 
 }
 
@@ -17,7 +18,7 @@ h4 {
 
 
 span {
-	text-align: right;
+	float:right;
 	font-style: italic;
 	font-size: 12px;
 }
@@ -38,17 +39,15 @@ a:hover {
 }
 
 #tweetblock {
-
+	float:left;
 	border: 2px solid lightgray;
-	margin: 10px;
+	margin: 30px 10px 100px 9px;
 	border-radius: 5px;
 	width: 60%;
 	background-color: white;
 	padding: 10px;
 }
-#navbar {
-	display: none;
-}
+
 
 #reload, #send {
 	background-color: darkslategray;
