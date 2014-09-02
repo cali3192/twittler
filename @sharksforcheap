@@ -31,15 +31,15 @@
     }
 
     setInterval (function() {  
-      showTweet(streams.home);  
+      showTweet(streams.users.sharksforcheap);  
     }, 5000);
 
     $(document).ready(function() {
 
-      showTweet(streams.home);
+      showTweet(streams.users.sharksforcheap);
 
       $('#reload').on('click', function () {
-        showTweet(streams.home);
+        showTweet(streams.users.sharksforcheap);
       });
 
     });
